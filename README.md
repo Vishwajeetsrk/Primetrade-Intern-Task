@@ -4,10 +4,6 @@ PrimeTrade is a full-stack authentication system built with the **MERN stack** (
 
 The project serves as a solid foundation for any MERN application requiring user authentication. It includes basic task management on the protected dashboard to demonstrate real-world usage of protected routes.
 
-![MERN Stack](https://img.shields.io/badge/MERN-Stack-brightgreen)
-![License](https://img.shields.io/badge/License-MIT-blue)
-![Node.js](https://img.shields.io/badge/Node.js-v18%2B-green)
-![React](https://img.shields.io/badge/React-18%2B-blue)
 
 ---
 
