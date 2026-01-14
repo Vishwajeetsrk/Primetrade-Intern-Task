@@ -1,11 +1,11 @@
 # PrimeTrade – MERN Stack Authentication System
 
-PrimeTrade is a full-stack authentication project built using the MERN stack (MongoDB Atlas, Express, React, Node.js).  
-It demonstrates secure user signup and login with JWT authentication, protected routes, and a simple dashboard UI.
+PrimeTrade is a full-stack authentication project built using the **MERN stack** (MongoDB Atlas, Express, React, Node.js).
+It demonstrates secure user signup and login with **JWT authentication**, protected routes, and a simple dashboard UI.
 
 ---
 
-## Features
+## 🚀 Features
 
 - User Signup (Registration)
 - User Login & Authentication
@@ -18,15 +18,15 @@ It demonstrates secure user signup and login with JWT authentication, protected 
 
 ---
 
-## Tech Stack
+## 🛠 Tech Stack
 
-**Frontend**
+### Frontend
 - React (Vite)
 - React Router DOM
 - Bootstrap
 - Axios
 
-**Backend**
+### Backend
 - Node.js
 - Express.js
 - MongoDB Atlas
@@ -37,129 +37,86 @@ It demonstrates secure user signup and login with JWT authentication, protected 
 
 ---
 
-##  Project Structure
+## 📁 Project Structure
 
-# PrimeTrade – MERN Stack Authentication System
-
-PrimeTrade is a full-stack authentication project built using the MERN stack (MongoDB Atlas, Express, React, Node.js).  
-It demonstrates secure user signup and login with JWT authentication, protected routes, and a simple dashboard UI.
-
----
-
-##  Features
-
-- User Signup (Registration)
-- User Login & Authentication
-- Password Hashing with bcrypt
-- JWT Token Generation
-- Protected Dashboard Route
-- MongoDB Atlas Database
-- RESTful API Backend (Express)
-- Frontend with React + Bootstrap
-
----
-
-##  Tech Stack
-
-**Frontend**
-- React (Vite)
-- React Router DOM
-- Bootstrap
-- Axios
-
-**Backend**
-- Node.js
-- Express.js
-- MongoDB Atlas
-- Mongoose
-- JWT (JSON Web Tokens)
-- bcryptjs
-- dotenv
-
----
-
-##  Project Structure
-Primetrade-Intern-Task
+PrimeTrade-Intern-Task
 ├── backend
-│ ├── models
-│ │ ├── User.js
-│ │ └── Task.js
-│ ├── routes
-│ │ ├── auth.js
-│ │ └── tasks.js
-│ ├── middleware
-│ │ └── authMiddleware.js
-│ ├── server.js
-│ ├── .env (not committed)
-│ └── package.json
+│   ├── models
+│   │   ├── User.js
+│   │   └── Task.js
+│   ├── routes
+│   │   ├── auth.js
+│   │   └── tasks.js
+│   ├── middleware
+│   │   └── authMiddleware.js
+│   ├── server.js
+│   ├── .env (not committed)
+│   └── package.json
 │
 └── frontend
-├── src
-│ ├── components
-│ │ ├── Navbar.jsx
-│ │ └── ProtectedRoute.jsx
-│ ├── pages
-│ │ ├── Login.jsx
-│ │ ├── Register.jsx
-│ │ └── Dashboard.jsx
-│ ├── api.js
-│ ├── App.jsx
-│ └── main.jsx
-├── index.html
-└── package.json
+    ├── public
+    │   └── (static files)
+    ├── src
+    │   ├── assets
+    │   ├── components
+    │   │   ├── Navbar.jsx
+    │   │   └── ProtectedRoute.jsx
+    │   ├── pages
+    │   │   ├── Login.jsx
+    │   │   ├── Register.jsx
+    │   │   └── Dashboard.jsx
+    │   ├── api.js
+    │   ├── App.css
+    │   ├── App.jsx
+    │   └── main.jsx
+    ├── index.html
+    └── package.json
 
 ---
 
-##  Authentication Flow
+## 🔐 Authentication Flow
 
 1. User signs up with email & password.
-2. Password stored in MongoDB in hashed form.
+2. Password is hashed and stored securely in MongoDB.
 3. User logs in and receives a JWT token.
-4. JWT token stored in browser localStorage.
-5. Protected dashboard verifies token before access.
+4. JWT token is stored in browser localStorage.
+5. Protected routes verify JWT before granting access.
 
 ---
 
-##  How to Run the Project Locally
+## ▶️ How to Run the Project Locally
 
 ### Backend
 cd backend
 npm install
-node server.js
-
+# Start the backend (production)
+npm start
+# Or for development (hot reload with nodemon)
+npm run dev
+```
 
 ### Frontend
+```bash
 cd frontend
 npm install
 npm run dev
+```
 
-App running:
-http://localhost:5173
+Frontend runs at http://localhost:5173/
 
+Backend runs at http://localhost:5000/ (default)
 
-### Database
-- MongoDB Atlas cloud database.
-- User data stored in users collection.
-- Passwords are encrypted (hashed), not stored in plain text.
-- Verified via MongoDB Atlas Data Explorer.
+---
 
+## 🔒 Security Features
 
-### ✅ Sample Credentials (for testing)
-Email: test@demo.com
-Password: 123456
+- bcrypt password hashing
+- JWT authentication
+- Protected routes
+- Environment variables
 
+---
 
-### Security Features
-- Password hashing with bcryptjs.
-- JWT token based authentication.
-- Protected routes using middleware.
-- Environment variables for sensitive keys.
+## 👤 Author
 
-### Future Improvements
-- Add logout & session expiry.
-- Add role-based access.
-- Add Task CRUD UI/Backend.
-- Deploy backend and frontend to hosting services.
-
-### Author
 Vishwajeet
