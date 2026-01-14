@@ -1,122 +1,196 @@
-# PrimeTrade – MERN Stack Authentication System
+# Assignment Intern PrimeTrade – Secure MERN Stack Authentication System
 
-PrimeTrade is a full-stack authentication project built using the **MERN stack** (MongoDB Atlas, Express, React, Node.js).
-It demonstrates secure user signup and login with **JWT authentication**, protected routes, and a simple dashboard UI.
+PrimeTrade is a full-stack authentication system built with the **MERN stack** (MongoDB Atlas, Express.js, React + Vite, Node.js). It implements secure user registration, login, JWT-based authentication, protected routes, and a clean dashboard interface.
+
+The project serves as a solid foundation for any MERN application requiring user authentication. It includes basic task management on the protected dashboard to demonstrate real-world usage of protected routes.
+
+![MERN Stack](https://img.shields.io/badge/MERN-Stack-brightgreen)
+![License](https://img.shields.io/badge/License-MIT-blue)
+![Node.js](https://img.shields.io/badge/Node.js-v18%2B-green)
+![React](https://img.shields.io/badge/React-18%2B-blue)
 
 ---
 
 ## 🚀 Features
 
-- User Signup (Registration)
-- User Login & Authentication
-- Password Hashing with bcrypt
-- JWT Token Generation
-- Protected Dashboard Route
-- MongoDB Atlas Database
-- RESTful API Backend (Express)
-- Frontend with React + Bootstrap
+- **User Registration & Login** with form validation
+- **Secure Password Hashing** using bcrypt
+- **JWT Authentication** (access token stored in localStorage)
+- **Protected Routes** (middleware + frontend wrapper)
+- **Simple Task Management** on protected dashboard (CRUD demo)
+- **Responsive UI** with Bootstrap
+- **RESTful API** design
+- **Environment-based configuration**
 
 ---
 
 ## 🛠 Tech Stack
 
 ### Frontend
-- React (Vite)
-- React Router DOM
-- Bootstrap
-- Axios
+- React 18 + Vite
+- React Router DOM v6
+- Axios for API calls
+- Bootstrap 5
+- localStorage for token persistence
 
 ### Backend
-- Node.js
-- Express.js
-- MongoDB Atlas
-- Mongoose
-- JWT (JSON Web Tokens)
-- bcryptjs
-- dotenv
+- Node.js + Express.js
+- MongoDB Atlas + Mongoose ODM
+- JSON Web Tokens (jwt)
+- bcryptjs for password hashing
+- dotenv for environment variables
+- CORS configured
 
 ---
 
 ## 📁 Project Structure
-
-PrimeTrade-Intern-Task
+PrimeTrade
 ├── backend
+│   ├── config
+│   │   └── db.js              # MongoDB connection
+│   ├── controllers
+│   │   ├── authController.js  # Login/Register logic
+│   │   └── taskController.js  # Task CRUD logic
+│   ├── middleware
+│   │   └── authMiddleware.js  # JWT verification
 │   ├── models
 │   │   ├── User.js
 │   │   └── Task.js
 │   ├── routes
 │   │   ├── auth.js
 │   │   └── tasks.js
-│   ├── middleware
-│   │   └── authMiddleware.js
-│   ├── server.js
-│   ├── .env (not committed)
-│   └── package.json
+│   ├── .env                   # (gitignored)
+│   ├── package.json
+│   └── server.js
 │
-└── frontend
-    ├── public
-    │   └── (static files)
-    ├── src
-    │   ├── assets
-    │   ├── components
-    │   │   ├── Navbar.jsx
-    │   │   └── ProtectedRoute.jsx
-    │   ├── pages
-    │   │   ├── Login.jsx
-    │   │   ├── Register.jsx
-    │   │   └── Dashboard.jsx
-    │   ├── api.js
-    │   ├── App.css
-    │   ├── App.jsx
-    │   └── main.jsx
-    ├── index.html
-    └── package.json
+├── frontend
+│   ├── public
+│   │   └── vite.svg
+│   ├── src
+│   │   ├── assets                 # Images/icons
+│   │   ├── components
+│   │   │   ├── Navbar.jsx
+│   │   │   └── ProtectedRoute.jsx
+│   │   ├── pages
+│   │   │   ├── Login.jsx
+│   │   │   ├── Register.jsx
+│   │   │   ├── Dashboard.jsx
+│   │   │   └── Tasks.jsx          # (if separate page)
+│   │   ├── context                # Optional AuthContext
+│   │   ├── services
+│   │   │   └── api.js             # Axios instance
+│   │   ├── App.jsx
+│   │   ├── main.jsx
+│   │   └── index.css
+│   ├── index.html
+│   ├── package.json
+│   └── vite.config.js
+│
+├── README.md
+└── .gitignore
 
 ---
 
 ## 🔐 Authentication Flow
 
-1. User signs up with email & password.
-2. Password is hashed and stored securely in MongoDB.
-3. User logs in and receives a JWT token.
-4. JWT token is stored in browser localStorage.
-5. Protected routes verify JWT before granting access.
+1. User registers → password hashed with bcrypt → user saved in MongoDB
+2. User logs in → credentials verified → JWT signed and returned
+3. Token stored in `localStorage`
+4. Every protected request includes token in Authorization header
+5. Backend middleware verifies JWT → grants/denies access
+6. Frontend `ProtectedRoute` component checks token presence
 
 ---
 
-## ▶️ How to Run the Project Locally
+## ⚙️ Prerequisites
 
-### Backend
-cd backend
-npm install
-# Start the backend (production)
-npm start
-# Or for development (hot reload with nodemon)
-npm run dev
-```
+- Node.js v18 or higher
+- MongoDB Atlas account (or local MongoDB)
+- npm or yarn
 
-### Frontend
+---
+
+## ▶️ Setup & Running Locally
+
+### 1. Clone the Repository
 ```bash
-cd frontend
+git clone https://github.com/yourusername/PrimeTrade.git
+cd PrimeTrade
+```
+### 2. Backend Setup
+```
+Bashcd backend
 npm install
+```
+**Create .env file in /backend:**
+env
+```
+PORT=5000
+MONGO_URI=mongodb+srv://<username>:<password>@cluster0.mongodb.net/primetrade?retryWrites=true&w=majority
+JWT_SECRET=your_strong_secret_here
+JWT_EXPIRE=7d
+```
+**Start the server**:
+# Development (with nodemon)
+```
 npm run dev
 ```
+# Production
+```
+npm start
+```
+### 3. Frontend Setup
+```
+cd ../frontend
+npm install
+```
+**Create proxy in vite.config.js (to avoid CORS issues):**
+JavaScript
+```
+server: {
+  proxy: {
+    '/api': 'http://localhost:5000'
+  }
+}
+```
+**Start the frontend:**
+App runs at 
+```
+http://localhost:5173
+```
+---
+### 🔒 Security Considerations
 
-Frontend runs at http://localhost:5173/
+- Passwords hashed with bcrypt (salt rounds = 12 recommended)
+- JWT signed with strong secret and expiration
+- HTTP-only cookies can be added for enhanced security (future improvement)
+- Input validation on both frontend and backend
+- Environment variables never committed
 
-Backend runs at http://localhost:5000/ (default)
+---
+### 📸 Screenshots 
+
+- Login Page
+- Registration Page
+- Protected Dashboard with Tasks
+
+---
+### 🤝 Contributing
+Contributions are welcome! Feel free to open issues or submit pull requests.
+
+- Fork the repo
+- Create your feature branch (git checkout -b feature/AmazingFeature)
+- Commit your changes (git commit -m 'Add AmazingFeature')
+- Push to the branch (git push origin feature/AmazingFeature)
+- Open a Pull Request
+
+---
+### 📄 License
+Distributed under the MIT License. See LICENSE for more information.
 
 ---
 
-## 🔒 Security Features
-
-- bcrypt password hashing
-- JWT authentication
-- Protected routes
-- Environment variables
-
----
-
-## 👤 Author
-
+👤 Author
 Vishwajeet
+GitHub: @vishwajeetsrk
+
