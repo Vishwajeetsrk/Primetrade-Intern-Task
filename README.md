@@ -159,6 +159,11 @@ App runs at
 http://localhost:5173
 ```
 ---
+### 🧪 Sample Test Credentials
+Email: test@demo.com
+Password: 123456
+
+---
 ### 🔒 Security Considerations
 
 - Passwords hashed with bcrypt (salt rounds = 12 recommended)
