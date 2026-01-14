@@ -160,8 +160,20 @@ http://localhost:5173
 ```
 ---
 ### 🧪 Sample Test Credentials
-Email: test@demo.com
+Email: test@prime.com
 Password: 123456
+
+### MangoDB (optional)
+ clusters0--> Data Explorer --> primetrade -->user
+
+/** 
+* Paste one or more documents here
+*/
+{
+  "email": "test@prime.com",
+  "password": "$2a$10$ZxhkSdj7FN6CPk08Uwfmau9IJuc.Mj6GGMic2txg2V9YOWHzjYH/2",
+  "__v": 0
+}
 
 ---
 ### 🔒 Security Considerations
