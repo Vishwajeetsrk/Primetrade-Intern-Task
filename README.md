@@ -7,6 +7,15 @@ The project serves as a solid foundation for any MERN application requiring user
 
 ---
 
+### 📸 Screenshots 
+<img src="videotest.gif" alt="Alt text" width=""/>
+
+- Login Page
+- Registration Page
+- Protected Dashboard with Tasks
+
+
+---
 ## 🚀 Features
 
 - **User Registration & Login** with form validation
@@ -183,14 +192,6 @@ Password: 123456
 - HTTP-only cookies can be added for enhanced security (future improvement)
 - Input validation on both frontend and backend
 - Environment variables never committed
-
----
-### 📸 Screenshots 
-<img src="videotest.gif" alt="Alt text" width=""/>
-
-- Login Page
-- Registration Page
-- Protected Dashboard with Tasks
 
 ---
 ### 🤝 Contributing
