@@ -123,14 +123,12 @@ Primetrade-Intern-Task
 ##  How to Run the Project Locally
 
 ### Backend
-
 cd backend
 npm install
 node server.js
 
 
 ### Frontend
-
 cd frontend
 npm install
 npm run dev
@@ -140,10 +138,10 @@ http://localhost:5173
 
 
 ### Database
-MongoDB Atlas cloud database.
-User data stored in users collection.
-Passwords are encrypted (hashed), not stored in plain text.
-Verified via MongoDB Atlas Data Explorer.
+- MongoDB Atlas cloud database.
+- User data stored in users collection.
+- Passwords are encrypted (hashed), not stored in plain text.
+- Verified via MongoDB Atlas Data Explorer.
 
 
 ### ✅ Sample Credentials (for testing)
@@ -152,16 +150,16 @@ Password: 123456
 
 
 ### Security Features
-Password hashing with bcryptjs.
-JWT token based authentication.
-Protected routes using middleware.
-Environment variables for sensitive keys.
+- Password hashing with bcryptjs.
+- JWT token based authentication.
+- Protected routes using middleware.
+- Environment variables for sensitive keys.
 
 ### Future Improvements
-Add logout & session expiry.
-Add role-based access.
-Add Task CRUD UI/Backend.
-Deploy backend and frontend to hosting services.
+- Add logout & session expiry.
+- Add role-based access.
+- Add Task CRUD UI/Backend.
+- Deploy backend and frontend to hosting services.
 
 ### Author
 Vishwajeet
