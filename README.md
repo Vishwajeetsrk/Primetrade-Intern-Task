@@ -44,7 +44,7 @@ The project serves as a solid foundation for any MERN application requiring user
 ---
 
 ## 📁 Project Structure
-PrimeTrade
+Primetrade-Intern-Task
 ├── backend
 │   ├── config
 │   │   └── db.js              # MongoDB connection
@@ -88,6 +88,7 @@ PrimeTrade
 │
 ├── README.md
 └── .gitignore
+
 
 ---
 
