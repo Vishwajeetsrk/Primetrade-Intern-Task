@@ -110,13 +110,16 @@ Primetrade-Intern-Task
 ## ▶️ Setup & Running Locally
 
 ### 1. Clone the Repository
-```bash
+bash
+```
 git clone https://github.com/yourusername/PrimeTrade.git
 cd PrimeTrade
 ```
 ### 2. Backend Setup
+bash
 ```
-Bashcd backend
+cd backend
+node server.js
 npm install
 ```
 **Create .env file in /backend:**
