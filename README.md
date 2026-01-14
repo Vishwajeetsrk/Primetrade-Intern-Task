@@ -192,5 +192,5 @@ Distributed under the MIT License. See LICENSE for more information.
 
 👤 Author
 Vishwajeet
-GitHub: @vishwajeetsrk
+GitHub: [@vishwajeetsrk](https://github.com/Vishwajeetsrk)
 
