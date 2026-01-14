@@ -186,7 +186,7 @@ Password: 123456
 
 ---
 ### 📸 Screenshots 
-
+<img src="test.gif" alt="Alt text" width=""/>
 - Login Page
 - Registration Page
 - Protected Dashboard with Tasks
